@@ -3,21 +3,20 @@
 An IoT-based monitoring system for fish storage quality using ESP32, multiple sensors, and Blynk cloud platform. The device monitors temperature, pH levels, gas emissions (ammonia/VOCs), and humidity to detect early signs of fish spoilage.
 
 ## Table of Contents
-•	Features
-•	Hardware Requirements
-•	Pin Configuration
-•	Software Requirements
-•	Blynk Setup
-•	Installation
-•	Threshold Values
-•	How It Works
-•	Serial Output Example
-•	Troubleshooting
-•	Future Improvements
+1. Features
+2. Hardware Requirements
+3. Pin Configuration
+4. Software Requirements
+5. Blynk Setup
+6. Installation
+7. Threshold Values
+8. How It Works
+9. Troubleshooting
+10. Future Improvements
 
 ________________________________________
 
-## Features
+## 1. Features
 •	Real-time Monitoring — Continuous monitoring of 4 critical parameters
 •	Visual Alerts — LED indicators for warning and critical levels
 •	Audible Alerts — Buzzer activates during abnormal conditions
@@ -30,7 +29,7 @@ o	Humidity levels
 
 ________________________________________
 
-## Hardware Requirements
+## 2. Hardware Requirements
 Component	Quantity	Specification
 ESP32 Development Board	1	Any ESP32 variant
 DS18B20 Temperature Sensor	1	Waterproof recommended
@@ -45,7 +44,7 @@ Breadboard & Jumper Wires	—	As needed
 
 ________________________________________
 
-## Pin Configuration
+## 3. Pin Configuration
 Component	ESP32 Pin
 Sensors	
 DS18B20 (Data)	18
@@ -67,7 +66,7 @@ Buzzer	19
 
 ________________________________________
 
-## Software Requirements
+## 4. Software Requirements
 •	Arduino IDE (1.8.19 or newer)
 •	ESP32 Board Package (v2.0.0 or newer)
 •	Required Libraries: 
@@ -77,7 +76,7 @@ o	DallasTemperature (v3.9.0)
 
 ________________________________________
 
-## Installing Libraries
+### 4.1 Installing Libraries
 1.	Open Arduino IDE
 2.	Go to Sketch → Include Library → Manage Libraries
 3.	Search and install: 
@@ -87,7 +86,7 @@ o	DallasTemperature by Miles Burton
 
 ________________________________________
 
-## ESP32 Board Installation
+### 4.2 ESP32 Board Installation
 1.	Go to File → Preferences
 2.	Add to "Additional Boards Manager URLs":
    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
@@ -96,7 +95,8 @@ ________________________________________
 
 ________________________________________
 
-## Blynk Setup
+## 5. Blynk Setup
+
 1.	Create an account at blynk.cloud
 2.	Create a new Template and add the following Datastreams:
 Virtual Pin	Name	Data Type
@@ -114,7 +114,7 @@ cpp
   	
 ________________________________________
 
-## Installation
+## 6. Installation
 1.	Clone or download this repository
 2.	Open the .ino sketch in Arduino IDE
 3.	Fill in your Wi-Fi credentials and Blynk Auth Token
@@ -125,29 +125,33 @@ ________________________________________
 
 ________________________________________
 
-## Threshold Values
+## 7. Threshold Values
 
 These default thresholds can be adjusted in the sketch to suit your storage conditions.
 
-### Temperature (°C)
+### 7.1 Temperature (°C)
+
 State	Value
 Normal	≤ 4°C
 Warning	4°C – 8°C
 Critical	> 8°C
 
-### pH Level
+### 7.2 pH Level
+
 State	Value
 Normal	6.0 – 7.0
 Warning	5.5 – 6.0 or 7.0 – 7.5
 Critical	< 5.5 or > 7.5
 
-### Gas / VOC Level (Raw ADC)
+### 7.3 Gas / VOC Level (Raw ADC)
+
 State	Value
 Normal	< 300
 Warning	300 – 600
 Critical	> 600
 
-### Humidity (%)
+### 7.4 Humidity (%)
+
 State	Value
 Normal	85% – 95%
 Warning	95% – 98%
@@ -155,7 +159,7 @@ Critical	> 98% or < 80%
 
 ________________________________________
 
-## How It Works
+## 8. How It Works
 
 1.	Sensor Reading — The ESP32 reads all sensors every few seconds
 2.	Threshold Evaluation — Each reading is compared against warning and critical thresholds
@@ -165,20 +169,8 @@ o	🔴 Critical LED lights up when a parameter exceeds safe limits
 4.	Buzzer Alert — Activates when any parameter reaches a critical level
 5.	Cloud Upload — All readings are sent to Blynk virtual pins for remote dashboard monitoring
 ________________________________________
-## Serial Output Example
-==================================
-  Fish Quality Monitor - Reading
-==================================
-Temperature : 3.75 °C     [OK]
-pH Level    : 6.82        [OK]
-Gas Level   : 214 (raw)   [OK]
-Humidity    : 80.3 %      [OK]
-----------------------------------
-Overall Status: FRESH
-==================================
-________________________________________
 
-## Troubleshooting
+## 9. Troubleshooting
 
 Issue	Possible Cause	Solution
 DS18B20 reads -127°C	Missing or incorrect pull-up resistor	Add a 4.7kΩ resistor between Data and VCC
@@ -190,7 +182,7 @@ Upload fails	Wrong board or port selected	Verify ESP32 board and COM port in Too
 
 ________________________________________
 
-## Future Improvements
+## 10. Future Improvements
 
 •	Add an OLED display for local status readout
 •	Implement data logging to SD card or SPIFFS
