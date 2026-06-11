@@ -206,19 +206,14 @@ ________________________________________
 
 ## 9. Troubleshooting
 
-Issue	                              Possible Cause                        	         Solution
-
-DS18B20 reads -127°C      	       Missing or incorrect pull-up resistor	         Add a 4.7kΩ resistor between Data and VCC
-
-No Blynk connection	             Wrong credentials or no Wi-Fi	               Check SSID, password, and auth token
-
-pH reads 0 or is erratic.         Incorrect wiring or an uncalibrated sensor.    Verify the analog pin and calibrate with buffer solutions
-
-The gas sensor is always high.    The Sensor needs warm-up time.                 Allow 2–3 minutes for MQ-135 to stabilize after power-on
-
-LEDs not lighting up	             Missing current-limiting resistors	            Ensure 220Ω resistors are in series with each LED
-
-Upload fails	                   Wrong board or port selected	                  Verify ESP32 board and COM port in Tools menu
+| Issue | Possible Cause | Solution |
+|------|----------------|----------|
+| DS18B20 reads -127°C | Missing or incorrect pull-up resistor | Add a 4.7kΩ resistor between Data and VCC |
+| No Blynk connection | Wrong credentials or no Wi-Fi | Check SSID, password, and auth token |
+| pH reads 0 or is erratic | Incorrect wiring or uncalibrated sensor | Verify the analog pin and calibrate with buffer solutions |
+| Gas sensor always high | Sensor needs warm-up time | Allow 2–3 minutes for MQ-135 to stabilize after power-on |
+| LEDs not lighting up | Missing current-limiting resistors | Ensure 220Ω resistors are in series with each LED |
+| Upload fails | Wrong board or port selected | Verify ESP32 board and COM port in Tools menu |
 
 ________________________________________
 
