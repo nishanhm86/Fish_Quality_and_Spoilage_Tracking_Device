@@ -31,6 +31,7 @@ ________________________________________
 
 ## 2. Hardware Requirements
 Component	                  Quantity	         Specification
+
 1. ESP32 Development Board      	1	            Any ESP32 variant
 2. DS18B20 Temperature Sensor	   1	            Waterproof recommended
 3. MQ-135 Gas Sensor	            1            	For ammonia/VOC detection
@@ -72,10 +73,15 @@ ________________________________________
 ## 4. Software Requirements
 
 1. Arduino IDE (1.8.19 or newer)
-2. ESP32 Board Package (v2.0.0 or newer)
-3. Required Libraries:
+   
+3. ESP32 Board Package (v2.0.0 or newer)
+   
+4. Required Libraries:
+
    3.1 Blynk (Blynk_ESP32_BT_WF.h or via Library Manager)
+
    3.2 OneWire (v2.3.7)
+
    3.3 DallasTemperature (v3.9.0)
 
 ________________________________________
@@ -103,18 +109,26 @@ ________________________________________
 ## 5. Blynk Setup
 
 1.	Create an account at blynk.cloud
-2.	Create a new Template and add the following Datastreams:
-Virtual Pin	Name	Data Type
-V0	Temperature	Double
-V1	pH Level	Double
-V2	Gas Level	Double
-V3	Humidity	Double
-3.	Create a new Device from the template
-4.	Copy your Auth Token, Template ID, and Template Name
-5.	Update the credentials in the sketch:
+   
+3.	Create a new Template and add the following Datastreams:
+   
+Virtual Pin	            Name              Data Type
+
+1. V0	               Temperature	         Double
+2. V1	               pH Level	            Double
+3. V2	               Gas Level         	Double
+4. V3	               Humidity	            Double
+
+6.	Create a new Device from the template
+7.	Copy your Auth Token, Template ID, and Template Name
+8.	Update the credentials in the sketch:
+
 cpp
+
    #define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
+
    #define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
+   
    #define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
   	
 ________________________________________
@@ -167,23 +181,35 @@ ________________________________________
 ## 8. How It Works
 
 1.	Sensor Reading — The ESP32 reads all sensors every few seconds
+
 2.	Threshold Evaluation — Each reading is compared against warning and critical thresholds
-3.	LED Indication: 
+
+3.	LED Indication:
+   
 o	🟡 Warning LED lights up when a parameter approaches unsafe levels
+
 o	🔴 Critical LED lights up when a parameter exceeds safe limits
-4.	Buzzer Alert — Activates when any parameter reaches a critical level
-5.	Cloud Upload — All readings are sent to Blynk virtual pins for remote dashboard monitoring
+
+5.	Buzzer Alert — Activates when any parameter reaches a critical level
+
+6.	Cloud Upload — All readings are sent to Blynk virtual pins for remote dashboard monitoring
 ________________________________________
 
 ## 9. Troubleshooting
 
-Issue	Possible Cause	Solution
-DS18B20 reads -127°C	Missing or incorrect pull-up resistor	Add a 4.7kΩ resistor between Data and VCC
-No Blynk connection	Wrong credentials or no Wi-Fi	Check SSID, password, and auth token
-pH reads 0 or is erratic. Incorrect wiring or an uncalibrated sensor. Verify the analog pin and calibrate with buffer solutions
-The gas sensor is always high. The Sensor needs warm-up time. Allow 2–3 minutes for MQ-135 to stabilize after power-on
-LEDs not lighting up	Missing current-limiting resistors	Ensure 220Ω resistors are in series with each LED
-Upload fails	Wrong board or port selected	Verify ESP32 board and COM port in Tools menu
+Issue	                              Possible Cause                        	         Solution
+
+DS18B20 reads -127°C      	       Missing or incorrect pull-up resistor	         Add a 4.7kΩ resistor between Data and VCC
+
+No Blynk connection	             Wrong credentials or no Wi-Fi	               Check SSID, password, and auth token
+
+pH reads 0 or is erratic.         Incorrect wiring or an uncalibrated sensor.    Verify the analog pin and calibrate with buffer solutions
+
+The gas sensor is always high.    The Sensor needs warm-up time.                 Allow 2–3 minutes for MQ-135 to stabilize after power-on
+
+LEDs not lighting up	             Missing current-limiting resistors	            Ensure 220Ω resistors are in series with each LED
+
+Upload fails	                   Wrong board or port selected	                  Verify ESP32 board and COM port in Tools menu
 
 ________________________________________
 
