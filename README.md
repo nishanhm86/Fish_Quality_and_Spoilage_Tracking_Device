@@ -30,19 +30,28 @@ ________________________________________
 ________________________________________
 
 ## 2. Hardware Requirements
-Component	                  Quantity	         Specification
-
-1. ESP32 Development Board      	1	            Any ESP32 variant
-2. DS18B20 Temperature Sensor	   1	            Waterproof recommended
-3. MQ-135 Gas Sensor	            1            	For ammonia/VOC detection
-4. pH Sensor Module	            1	            Analog output (0–5V)
-5. Humidity Sensor	            1	            Analog output type
-6. LEDs	                        8	            Various colors
-7. Buzzer	                     1            	5V active/passive
-8. Resistors	                  8	            220Ω for LEDs
-9. 4.7kΩ Resistor	               1	            For DS18B20 data line
-10. Breadboard & Jumper Wires	As needed
-
+Component	                  | Quantity	   |     Specification
+------------------------------------------------------------------------------
+1. ESP32 Development Board    |   1	         |   Any ESP32 variant
+------------------------------------------------------------------------------
+2. DS18B20 Temperature Sensor	|   1	         |   Waterproof recommended
+------------------------------------------------------------------------------
+3. MQ-135 Gas Sensor	         |   1          |   For ammonia/VOC detection
+------------------------------------------------------------------------------
+4. pH Sensor Module	         |   1	         |   Analog output (0–5V)
+------------------------------------------------------------------------------
+5. Humidity Sensor	         |   1	         |   Analog output type
+------------------------------------------------------------------------------
+6. LEDs	                     |   8	         |   Various colors
+------------------------------------------------------------------------------
+7. Buzzer	                  |   1          |   5V active/passive
+------------------------------------------------------------------------------
+8. Resistors	               |   8	         |   220Ω for LEDs
+------------------------------------------------------------------------------
+9. 4.7kΩ Resistor	            |   1	         |   For DS18B20 data line
+------------------------------------------------------------------------------
+10. Breadboard & Jumper Wires	|  As needed   | 
+------------------------------------------------------------------------------
 ________________________________________
 
 ## 3. Pin Configuration
