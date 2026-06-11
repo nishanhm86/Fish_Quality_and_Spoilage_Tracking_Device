@@ -190,14 +190,14 @@ ________________________________________
 
 ## 10. Future Improvements
 
-•	Add an OLED display for local status readout
-•	Implement data logging to SD card or SPIFFS
-•	Add push notifications via Blynk Automation
-•	Integrate machine learning model for spoilage prediction
-•	Support for multiple storage units via MQTT broker
-•	Battery-powered operation with deep sleep mode
-•	Web dashboard with historical trend graphs
-•	Calibration mode accessible via serial commands
+1. Add an OLED display for local status readout
+2. Implement data logging to the SD card or SPIFFS
+3. Add push notifications via Blynk Automation
+4. Integrate a machine learning model for spoilage prediction
+5. Support for multiple storage units via MQTT broker
+6. Battery-powered operation with deep sleep mode
+7. Web dashboard with historical trend graphs
+8. Calibration mode accessible via serial commands
 
 ________________________________________
 
