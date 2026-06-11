@@ -17,69 +17,74 @@ An IoT-based monitoring system for fish storage quality using ESP32, multiple se
 ________________________________________
 
 ## 1. Features
-•	Real-time Monitoring — Continuous monitoring of 4 critical parameters
-•	Visual Alerts — LED indicators for warning and critical levels
-•	Audible Alerts — Buzzer activates during abnormal conditions
-•	Cloud Integration — Data sent to Blynk IoT platform for remote monitoring
-•	Multi-parameter Detection: 
-o	Temperature (DS18B20)
-o	Gas/VOC levels (Spoilage detection)
-o	pH levels (Fish freshness indicator)
-o	Humidity levels
+1. Real-time Monitoring — Continuous monitoring of 4 critical parameters
+2. Visual Alerts — LED indicators for warning and critical levels
+3. Audible Alerts — Buzzer activates during abnormal conditions
+4. Cloud Integration — Data sent to Blynk IoT platform for remote monitoring
+5. Multi-parameter Detection:
+6. Temperature (DS18B20)
+7. Gas/VOC levels (Spoilage detection)
+8. pH levels (Fish freshness indicator)
+9. Humidity levels
 
 ________________________________________
 
 ## 2. Hardware Requirements
-Component	Quantity	Specification
-ESP32 Development Board	1	Any ESP32 variant
-DS18B20 Temperature Sensor	1	Waterproof recommended
-MQ-135 Gas Sensor	1	For ammonia/VOC detection
-pH Sensor Module	1	Analog output (0–5V)
-Humidity Sensor	1	Analog output type
-LEDs	8	Various colors
-Buzzer	1	5V active/passive
-Resistors	8	220Ω for LEDs
-4.7kΩ Resistor	1	For DS18B20 data line
-Breadboard & Jumper Wires	—	As needed
+Component	                  Quantity	         Specification
+1. ESP32 Development Board      	1	            Any ESP32 variant
+2. DS18B20 Temperature Sensor	   1	            Waterproof recommended
+3. MQ-135 Gas Sensor	            1            	For ammonia/VOC detection
+4. pH Sensor Module	            1	            Analog output (0–5V)
+5. Humidity Sensor	            1	            Analog output type
+6. LEDs	                        8	            Various colors
+7. Buzzer	                     1            	5V active/passive
+8. Resistors	                  8	            220Ω for LEDs
+9. 4.7kΩ Resistor	               1	            For DS18B20 data line
+10. Breadboard & Jumper Wires	As needed
 
 ________________________________________
 
 ## 3. Pin Configuration
-Component	ESP32 Pin
-Sensors	
-DS18B20 (Data)	18
-pH Sensor	2
-Gas Sensor	5
-Humidity Sensor	8
 
-Output
-LEDs	
-pH Warning LED	7
-pH Critical LED	17
-Gas Warning LED	9
-Gas Critical LED	10
-Humidity Warning LED	11
-Humidity Critical LED	12
-Temp Warning LED	13
-Temp Critical LED	14	
-Buzzer	19
+1. Component	ESP32 Pin
+
+### Sensors	
+
+1. DS18B20 (Data)	18
+2. pH Sensor	2
+3. Gas Sensor	5
+4. Humidity Sensor	8
+
+### Output
+
+1. pH Warning LED	7
+2. pH Critical LED	17
+3. Gas Warning LED	9
+4. Gas Critical LED	10
+5. Humidity Warning LED	11
+6. Humidity Critical LED	12
+7. Temp Warning LED	13
+8. Temp Critical LED	14
+9. Buzzer	19
 
 ________________________________________
 
 ## 4. Software Requirements
-•	Arduino IDE (1.8.19 or newer)
-•	ESP32 Board Package (v2.0.0 or newer)
-•	Required Libraries: 
-o	Blynk (Blynk_ESP32_BT_WF.h or via Library Manager)
-o	OneWire (v2.3.7)
-o	DallasTemperature (v3.9.0)
+
+1. Arduino IDE (1.8.19 or newer)
+2. ESP32 Board Package (v2.0.0 or newer)
+3. Required Libraries:
+   3.1 Blynk (Blynk_ESP32_BT_WF.h or via Library Manager)
+   3.2 OneWire (v2.3.7)
+   3.3 DallasTemperature (v3.9.0)
 
 ________________________________________
 
 ### 4.1 Installing Libraries
-1.	Open Arduino IDE
-2.	Go to Sketch → Include Library → Manage Libraries
-3.	Search and install: 
+
+1. Open Arduino IDE
+2. Go to Sketch → Include Library → Manage Libraries
+3. Search and install: 
 o	Blynk by Volodymyr Shymanskyy
 o	OneWire by Jim Studt
 o	DallasTemperature by Miles Burton
