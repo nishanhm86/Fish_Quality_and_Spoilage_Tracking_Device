@@ -30,28 +30,20 @@ ________________________________________
 ________________________________________
 
 ## 2. Hardware Requirements
-Component	                  | Quantity	   |     Specification
-------------------------------------------------------------------------------
-1. ESP32 Development Board    |   1	         |   Any ESP32 variant
-------------------------------------------------------------------------------
-2. DS18B20 Temperature Sensor	|   1	         |   Waterproof recommended
-------------------------------------------------------------------------------
-3. MQ-135 Gas Sensor	         |   1          |   For ammonia/VOC detection
-------------------------------------------------------------------------------
-4. pH Sensor Module	         |   1	         |   Analog output (0–5V)
-------------------------------------------------------------------------------
-5. Humidity Sensor	         |   1	         |   Analog output type
-------------------------------------------------------------------------------
-6. LEDs	                     |   8	         |   Various colors
-------------------------------------------------------------------------------
-7. Buzzer	                  |   1          |   5V active/passive
-------------------------------------------------------------------------------
-8. Resistors	               |   8	         |   220Ω for LEDs
-------------------------------------------------------------------------------
-9. 4.7kΩ Resistor	            |   1	         |   For DS18B20 data line
-------------------------------------------------------------------------------
-10. Breadboard & Jumper Wires	|  As needed   | 
-------------------------------------------------------------------------------
+
+| Component | Quantity | Specification |
+|----------|----------|---------------|
+| ESP32 Development Board | 1 | Any ESP32 variant |
+| DS18B20 Temperature Sensor | 1 | Waterproof recommended |
+| MQ-135 Gas Sensor | 1 | For ammonia/VOC detection |
+| pH Sensor Module | 1 | Analog output (0–5V) |
+| Humidity Sensor | 1 | Analog output type |
+| LEDs | 8 | Various colors |
+| Buzzer | 1 | 5V active/passive |
+| Resistors | 8 | 220Ω for LEDs |
+| 4.7kΩ Resistor | 1 | For DS18B20 data line |
+| Breadboard & Jumper Wires | As needed | - |
+
 ________________________________________
 
 ## 3. Pin Configuration
@@ -157,33 +149,12 @@ ________________________________________
 
 These default thresholds can be adjusted in the sketch to suit your storage conditions.
 
-### 7.1 Temperature (°C)
-
-State	Value
-Normal	≤ 4°C
-Warning	4°C – 8°C
-Critical	> 8°C
-
-### 7.2 pH Level
-
-State	Value
-Normal	6.0 – 7.0
-Warning	5.5 – 6.0 or 7.0 – 7.5
-Critical	< 5.5 or > 7.5
-
-### 7.3 Gas / VOC Level (Raw ADC)
-
-State	Value
-Normal	< 300
-Warning	300 – 600
-Critical	> 600
-
-### 7.4 Humidity (%)
-
-State	Value
-Normal	85% – 95%
-Warning	95% – 98%
-Critical	> 98% or < 80%
+| Parameter | Normal | Warning | Critical |
+|----------|--------|---------|----------|
+| Temperature (°C) | ≤ 4°C | 4°C – 8°C | > 8°C |
+| pH Level | 6.0 – 7.0 | 5.5 – 6.0 or 7.0 – 7.5 | < 5.5 or > 7.5 |
+| Gas / VOC (ADC) | < 300 | 300 – 600 | > 600 |
+| Humidity (%) | 85% – 95% | 95% – 98% | > 98% or < 80% |
 
 ________________________________________
 
